@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portugal & Spain Travel Journal</title>
+    
+    <!-- Google Fonts: Inter for clean typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fdf8f6',
+                            100: '#f2e8e5',
+                            200: '#eaddd7',
+                            300: '#e0cec7',
+                            400: '#d2bab0',
+                            500: '#a77a67',
+                            600: '#8d5d49', /* Main brand color - warm terracotta */
+                            700: '#734a39',
+                            800: '#5c3b2e',
+                            900: '#4a3026',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom styles for image hover effects */
+        .image-hover img {
+            transition: transform 0.5s ease;
+        }
+        .image-hover:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-white font-sans text-gray-800 antialiased selection:bg-brand-200 selection:text-brand-900">
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md fixed w-full z-50 top-0 border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i class="fa-solid fa-compass text-brand-600 text-2xl"></i>
+                    <span class="font-bold text-xl tracking-tight text-gray-900">IberianEscapade</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-900 hover:text-brand-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                    <a href="#recent" class="text-gray-500 hover:text-brand-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">The Journey</a>
+                    <a href="#gallery" class="text-gray-500 hover:text-brand-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Gallery</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-500 hover:text-gray-900 p-2">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative bg-white overflow-hidden pt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 pt-10 sm:pt-16 lg:pt-20">
+                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                    <div class="sm:text-center lg:text-left">
+                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                            <span class="block xl:inline">Wandering through</span>
+                            <span class="block text-brand-600 xl:inline">Portugal & Spain</span>
+                        </h1>
+                        <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                            A 10-day essential journey through the Iberian Peninsula. From the coastal charm of Lisbon to the passionate streets of Seville and the royal grandeur of Madrid.
+                        </p>
+                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                            <div class="rounded-md shadow">
+                                <a href="#recent" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors md:py-4 md:text-lg md:px-10">
+                                    Read the Journal
+                                </a>
+                            </div>
+                            <div class="mt-3 sm:mt-0 sm:ml-3">
+                                <a href="#gallery" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-brand-700 bg-brand-100 hover:bg-brand-200 transition-colors md:py-4 md:text-lg md:px-10">
+                                    View Photos
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+            <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?ixlib=rb-4.0.3&auto=format&fit=crop&w=1421&q=80" alt="Spain and Portugal scenery">
+            <!-- Overlay to soften image on mobile -->
+            <div class="absolute inset-0 bg-gray-900 opacity-20 lg:hidden"></div>
+        </div>
+    </div>
+
+    <!-- Journal Entries Section -->
+    <div id="recent" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-base text-brand-600 font-semibold tracking-wide uppercase">Travel Log</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    The Essential Itinerary
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Highlights from an incredible journey exploring the rich history, vibrant cultures, and stunning architecture.
+                </p>
+            </div>
+
+            <div class="mt-16">
+                <div class="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
+                    
+                    <!-- Day 1 -->
+                    <div class="pb-16 pt-8">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-brand-100 text-brand-600 font-bold text-lg border-2 border-brand-200 shadow-sm">
+                                01
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900">Views of Lisbon & Belém Tower</h3>
+                                <p class="text-sm text-gray-500 mt-1"><i class="fa-solid fa-location-dot mr-2 text-brand-500"></i>Lisbon, Portugal</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                            <div class="rounded-xl overflow-hidden image-hover relative group shadow-md">
+                                <img src="https://images.unsplash.com/photo-1583251633146-d24215f16382?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lisbon Cityscape" class="w-full h-64 object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                    <p class="text-white font-medium">Panoramic views over the hills of Lisbon</p>
+                                </div>
+                            </div>
+                            <div class="rounded-xl overflow-hidden image-hover relative group shadow-md">
+                                <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Belém Tower" class="w-full h-64 object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                    <p class="text-white font-medium">The 16th-century Belém Tower</p>
+                                </div>
+                            </div>
+                            <div class="rounded-xl overflow-hidden image-hover relative group shadow-md">
+                                <img src="https://images.unsplash.com/photo-1621217521743-41bb77908bde?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sintra Palace" class="w-full h-64 object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                    <p class="text-white font-medium">The "glorious Eden" of Sintra</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="prose prose-brand max-w-none text-gray-600 leading-relaxed text-lg">
+                            <p>Started the morning at the top of Edward VII's Park for breathtaking panoramic views over the hills of Lisbon and the River Tagus. Later, we visited the marina in Belém to see the striking 16th-century Belém Tower and the Monument of Discoveries, tracing the steps of Portugal's great explorers. In the afternoon, we took a short excursion to Sintra, a lush and romantic retreat filled with lavish castles and historic tiles. The sheer beauty of the Sintra Royal Palace was unforgettable.</p>
+                        </div>
+                    </div>
+
+                    <!-- Day 2 -->
+                    <div class="pb-16 pt-16 border-t border-gray-200">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-brand-100 text-brand-600 font-bold text-lg border-2 border-brand-200 shadow-sm">
+                                02
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900">Discovering Seville & Flamenco Nights</h3>
+                                <p class="text-sm text-gray-500 mt-1"><i class="fa-solid fa-location-dot mr-2 text-brand-500"></i>Seville, Spain</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div class="rounded-xl overflow-hidden image-hover relative group shadow-md">
+                                <img src="https://images.unsplash.com/photo-1559564072-a16223e75a6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Plaza de España" class="w-full h-80 object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                    <p class="text-white font-medium text-lg">The spectacular Plaza de España</p>
+                                </div>
+                            </div>
+                            <div class="rounded-xl overflow-hidden image-hover relative group shadow-md">
+                                <img src="https://images.unsplash.com/photo-1533669146194-e0e6ff407fce?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Cathedral of Seville" class="w-full h-80 object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                    <p class="text-white font-medium text-lg">The imposing Cathedral of Seville</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="prose prose-brand max-w-none text-gray-600 leading-relaxed text-lg">
+                            <p>After crossing the Spanish border into Andalucia, we spent a full day exploring Seville. We started at the breathtaking Plaza de España and wandered through the beautiful Maria Luisa Park. Walking through the narrow, quaint streets of the Barrio Santa Cruz was like stepping back in time. We also viewed the massive Cathedral of Seville, the resting place of Christopher Columbus. The night was capped off with a passionate traditional Flamenco show—experiencing the "deep song" and intense emotion in the birthplace of Flamenco.</p>
+                        </div>
+                    </div>
+
+                    <!-- Day 3 -->
+                    <div class="pb-16 pt-16 border-t border-gray-200">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-brand-100 text-brand-600 font-bold text-lg border-2 border-brand-200 shadow-sm">
+                                03
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900">The Mezquita of Cordoba & Madrid Bound</h3>
+                                <p class="text-sm text-gray-500 mt-1"><i class="fa-solid fa-location-dot mr-2 text-brand-500"></i>Cordoba & Madrid, Spain</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                            <div class="md:col-span-2 rounded-xl overflow-hidden image-hover relative group shadow-md">
+                                <img src="https://images.unsplash.com/photo-1583329158390-e7144e135e5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Mezquita de Cordoba" class="w-full h-[400px] object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                    <p class="text-white font-medium text-lg">The iconic arches of the Mezquita</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-6">
+                                <div class="rounded-xl overflow-hidden image-hover relative group shadow-md h-[188px]">
+                                    <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Madrid Architecture" class="w-full h-full object-cover">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                        <p class="text-white font-medium text-sm">Arriving in grand Madrid</p>
+                                    </div>
+                                </div>
+                                <div class="rounded-xl overflow-hidden image-hover relative group shadow-md h-[188px]">
+                                    <img src="https://images.unsplash.com/photo-1515443961218-a51367888e4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tapas" class="w-full h-full object-cover">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                        <p class="text-white font-medium text-sm">Essential evening tapas</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="prose prose-brand max-w-none text-gray-600 leading-relaxed text-lg">
+                            <p>Departing Seville, we headed north toward Madrid with a highly anticipated stop in Cordoba. The absolute highlight was the Mezquita de Cordoba, a soaring cathedral transformed from a grand mosque. Walking through its iconic red-and-white striped arches was a surreal architectural experience. After taking in the sights of Cordoba, we continued our drive and arrived in the bustling capital of Madrid, finishing off the day with a spread of traditional Spanish tapas in the city center.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="bg-brand-700">
+        <div class="max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                <span class="block">Ready for your own adventure?</span>
+            </h2>
+            <p class="mt-4 text-lg leading-6 text-brand-100">
+                This journal covers just a glimpse of the 10-day Essential Portugal & Spain tour.
+            </p>
+            <a href="https://www.gate1travel.com/tour/portugal-spain-escorted-10dessibe27.aspx" target="_blank" rel="noopener noreferrer" class="mt-8 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-brand-700 bg-white hover:bg-brand-50 transition-colors sm:w-auto">
+                View Official Tour Details <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-sm"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2 text-brand-600">
+                <i class="fa-solid fa-compass text-xl"></i>
+                <span class="font-bold text-lg tracking-tight text-gray-900">IberianEscapade</span>
+            </div>
+            <p class="text-base text-gray-400">
+                &copy; 2026 Travel Journal. Created for sharing memories.
+            </p>
+            <div class="flex space-x-6 text-gray-400">
+                <a href="#" class="hover:text-brand-600 transition-colors">
+                    <span class="sr-only">Instagram</span>
+                    <i class="fa-brands fa-instagram text-xl"></i>
+                </a>
+                <a href="#" class="hover:text-brand-600 transition-colors">
+                    <span class="sr-only">Twitter</span>
+                    <i class="fa-brands fa-twitter text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
